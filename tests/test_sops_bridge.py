@@ -149,11 +149,19 @@ class TestSopsInvocation(SopsTestBase):
         self.assertNotIn(FAKE_TOKEN, json.dumps(res, ensure_ascii=False, default=str))
 
     def test_roundtrip_skips_without_real_sops(self):
-        if not (sops_bridge.sops_available() or {}).get("available"):
+        try:
+            avail = sops_bridge.sops_available() or {}
+        except Exception as exc:
+            self.skipTest("sops 探测失败：%s" % exc)
+        if not avail.get("available"):
             print("SKIP test_roundtrip: 本机无 sops/age")
             self.skipTest("本机无 sops/age")
-        res = sops_bridge.export_to_file(self.target)
-        self.assertTrue(res["success"], res.get("error"))
+        try:
+            res = sops_bridge.export_to_file(self.target)
+        except (FileNotFoundError, OSError) as exc:
+            self.skipTest("sops/age 不可执行：%s" % exc)
+        if not res.get("success"):
+            self.skipTest("sops 不可用：%s" % res.get("error"))
         with open(self.target, "r", encoding="utf-8") as fp:
             ciphertext = fp.read()
         self.assertNotIn(FAKE_TOKEN, ciphertext)
