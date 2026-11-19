@@ -1,8 +1,6 @@
 name: selfcheck
 
 # Public-facing checks: unit tests, sanitized-export build, sensitive scan.
-# The exporter's scan skips .git, __pycache__, .github (this workflow), logs,
-# config and the exporter itself, so the workflow never matches its own rules.
 
 on:
   push:
@@ -22,8 +20,22 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Git identity for fixture repos
+        shell: bash
+        run: |
+          git config --global user.name "ci"
+          git config --global user.email "ci@example.com"
+
       - name: Unit tests
-        run: python -m unittest discover -s tests -v
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m unittest discover -s tests -v > unit.log 2>&1 || {
+            grep -E '^(FAIL|ERROR):' unit.log | head -20 | while IFS= read -r line; do echo "::error::$line"; done
+            tail -40 unit.log
+            exit 1
+          }
+          tail -6 unit.log
 
       - name: Sanitized export + sensitive-pattern self-check
         shell: bash
