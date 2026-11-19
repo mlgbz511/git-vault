@@ -154,7 +154,7 @@ class TestSopsInvocation(SopsTestBase):
         except Exception as exc:
             self.skipTest("sops 探测失败：%s" % exc)
         if not avail.get("available"):
-            print("SKIP test_roundtrip: 本机无 sops/age")
+            print("SKIP test_roundtrip: sops/age unavailable")
             self.skipTest("本机无 sops/age")
         try:
             res = sops_bridge.export_to_file(self.target)

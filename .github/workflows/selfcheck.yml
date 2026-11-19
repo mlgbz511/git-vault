@@ -27,6 +27,8 @@ jobs:
 
       - name: Unit tests
         shell: bash
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
           python -m unittest discover -s tests -v > unit.log 2>&1
           rc=$?
