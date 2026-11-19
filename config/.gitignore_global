@@ -1,0 +1,147 @@
+# =========================================================================
+# Git-Vault 全局忽略规则 - 纯源码严格模式 (Pure Source Strict)
+# 核心原则:
+# 1. 彻底杜绝可执行二进制与动态链接库入库
+# 2. 彻底杜绝无序高熵压缩包 (ZIP/TAR/7Z) 作为黑盒逃逸或撑爆 Git 存储
+# 3. 严格隔离所有环境凭据、私钥及中间构建目录
+# =========================================================================
+
+# --- 1. 可执行程序与二进制镜像 (Executable & Binary Binaries) ---
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
+*.msi
+*.iso
+*.dmg
+*.app
+*.sys
+*.drv
+*.com
+*.scr
+*.cpl
+
+# --- 2. 压缩包与二进制黑盒归档 (Archives & Compressed Bundles) ---
+# 注意: 编译打包的发行包应发布在 GitHub/Gitee Releases 附件中，严禁放入 Git 版本树
+*.zip
+*.tar
+*.gz
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.bz2
+*.xz
+*.apk
+*.ipa
+*.jar
+*.war
+
+# --- 3. 敏感密钥与环境凭据 (Secrets & Environment) ---
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.pkcs12
+*.pfx
+*.p12
+id_rsa
+id_rsa*
+id_ed25519
+id_ed25519*
+credentials.json
+service-account*.json
+token.txt
+secret.txt
+
+# --- 4. 常见开发语言构建产物与依赖 (Build Artifacts & Dependencies) ---
+# Node / Frontend
+node_modules/
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist
+.svelte-kit/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Java / Kotlin
+target/
+bin/
+*.class
+.gradle/
+build/
+
+# C / C++ / C# / .NET
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.pdb
+*.ilk
+*.aps
+*.ncb
+*.suo
+*.user
+*.useroscc
+*.sln.docstates
+*.o
+*.obj
+
+# Go & Rust
+/target/
+vendor/
+
+# --- 5. 操作系统与 IDE 杂质 (OS & Editor Garbage) ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/

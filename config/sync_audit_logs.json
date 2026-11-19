@@ -1,0 +1,36 @@
+[
+  {
+    "id": "sync_20261119_233339_830",
+    "timestamp": "2026-11-19 23:33:39",
+    "repo": "git_vault_repo_ti1bfu0g",
+    "repo_path": "C:\\Users\\MTL\\AppData\\Local\\Temp\\git_vault_repo_ti1bfu0g",
+    "branch": "master",
+    "head": "755403d99a82dc0139883ca1795f35cf8569638b",
+    "has_uncommitted_changes": true,
+    "uncommitted_count": 1,
+    "uncommitted_files": [
+      "a.txt"
+    ],
+    "duration_ms": 607,
+    "success": true,
+    "up_to_date": false,
+    "total_targets": 1,
+    "success_targets": 1,
+    "results": [
+      {
+        "target": "C:\\Users\\MTL\\AppData\\Local\\Temp\\git_vault_remote_4aatwjrn",
+        "url": "C:\\Users\\MTL\\AppData\\Local\\Temp\\git_vault_remote_4aatwjrn",
+        "success": true,
+        "up_to_date": false,
+        "status": "PUSHED",
+        "status_badge": "推送成功",
+        "pushed_range": null,
+        "exit_code": 0,
+        "duration_ms": 606,
+        "stdout": "",
+        "stderr": "To C:\\Users\\MTL\\AppData\\Local\\Temp\\git_vault_remote_4aatwjrn\n * [new branch]      master -> master",
+        "diagnosis": null
+      }
+    ]
+  }
+]

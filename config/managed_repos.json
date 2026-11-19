@@ -1,0 +1,14 @@
+{
+  "managed_repos": [
+    {
+      "path": "E:\\workSpace\\agent-framework-v2\\.tmp\\gv-pub",
+      "name": "tools/git-vault",
+      "is_my_repo": true,
+      "owner": "<owner>",
+      "added_by": "auto"
+    }
+  ],
+  "ignored_paths": [],
+  "custom_identifiers": [],
+  "filter_only_mine": true
+}
