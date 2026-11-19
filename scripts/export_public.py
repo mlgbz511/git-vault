@@ -23,6 +23,8 @@ COPY_FILES = (
     "run-vault-tray.vbs",
     "LICENSE",
     "README.public.md",
+    "vault.pyz",
+    "SHA256SUMS",
 )
 COPY_DIRS = ("core", "extensions", "tests", "web", "docs", "scripts", ".github")
 SKIP_DIRS = {"__pycache__", "__pkg__", ".git"}
