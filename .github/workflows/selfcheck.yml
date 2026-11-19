@@ -32,7 +32,14 @@ jobs:
           set -o pipefail
           python -m unittest discover -s tests -v > unit.log 2>&1 || {
             grep -E '^(FAIL|ERROR):' unit.log | head -20 | while IFS= read -r line; do echo "::error::$line"; done
-            tail -40 unit.log
+            python - <<'PY'
+import re
+text = open("unit.log", encoding="utf-8", errors="replace").read()
+blocks = re.findall(r"^(?:FAIL|ERROR): .*?(?=^(?:FAIL|ERROR): |\Z)", text, re.S | re.M)
+for block in blocks[:3]:
+    for line in block.splitlines()[:14]:
+        print("::error::" + line[:900])
+PY
             exit 1
           }
           tail -6 unit.log
