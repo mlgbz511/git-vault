@@ -1,0 +1,15 @@
+{
+  "id": "dsh-git-vault",
+  "name": "Git-Vault 安全网关与 Star 容灾",
+  "version": "2.0.0",
+  "description": "为 DSH (DeepSeek Harness) 提供基于 Windows DPAPI 硬件级加密、三云多路推送、合规泄密自愈、Panic 急停锁与私有 Star 资产检索。",
+  "type": "tool_provider",
+  "capabilities": ["tools", "resources"],
+  "author": "<owner>",
+  "mcp": {
+    "serverUrl": "http://127.0.0.1:8765/mcp/sse",
+    "transport": "sse",
+    "stdioCommand": "python",
+    "stdioArgs": ["<vault-root>\\tools\\git-vault\\core\\mcp_server.py"]
+  }
+}

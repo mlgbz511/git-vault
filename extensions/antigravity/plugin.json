@@ -1,0 +1,29 @@
+{
+  "name": "git-vault",
+  "displayName": "Git-Vault Enterprise & Star Hub",
+  "version": "2.0.0",
+  "description": "Hardware-level DPAPI encryption and multi-cloud disaster recovery gateway for Git repositories and Star assets.",
+  "logo": "assets/logo.svg",
+  "category": "Developer Tools",
+  "keywords": [
+    "git",
+    "mcp",
+    "compliance",
+    "disaster-recovery",
+    "stars-vault",
+    "dpapi"
+  ],
+  "mcpServers": "./mcp_config.json",
+  "suggestedPrompts": [
+    "Audit compliance and secret leaks in repository",
+    "Search curated Star assets in vault",
+    "Execute atomic multi-cloud sync push"
+  ],
+  "author": {
+    "name": "<owner>",
+    "url": "http://127.0.0.1:8765"
+  },
+  "homepage": "http://127.0.0.1:8765",
+  "repository": "https://github.com/<owner>/git-vault",
+  "license": "MIT"
+}

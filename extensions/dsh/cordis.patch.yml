@@ -1,0 +1,11 @@
+# Adds the git-vault MCP server (stdio JSON-RPC) to the DSH model tool list.
+- insert:
+    - id: mcp-git-vault
+      name: "@deepseek-ai/dsh-mcp-client"
+      config:
+        serverName: git_vault
+        transport: stdio
+        command: python
+        args:
+          - '<vault-root>\tools\git-vault\core\mcp_server.py'
+        failOnStartupError: true

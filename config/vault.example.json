@@ -1,0 +1,10 @@
+{
+  "saved_accounts": {
+    "github_user": "",
+    "gitee_user": "",
+    "gitlab_user": ""
+  },
+  "encrypted_tokens": {},
+  "encryption": "Windows-DPAPI",
+  "token_metadata": {}
+}

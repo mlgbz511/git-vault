@@ -1,0 +1,38 @@
+{
+  "default_id": "github",
+  "active_id": "github",
+  "profiles": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "name": "<owner>",
+      "email": "<owner>@users.noreply.github.com",
+      "platform": "github",
+      "builtin": true
+    },
+    {
+      "id": "gitlab",
+      "label": "GitLab",
+      "name": "<owner>",
+      "email": "<owner>@users.noreply.gitlab.com",
+      "platform": "gitlab",
+      "builtin": true
+    },
+    {
+      "id": "gitee",
+      "label": "Gitee",
+      "name": "<owner>",
+      "email": "<owner>@users.noreply.gitee.com",
+      "platform": "gitee",
+      "builtin": true
+    },
+    {
+      "id": "agent",
+      "label": "<bot-account>",
+      "name": "<bot-account>",
+      "email": "<bot-email>",
+      "platform": "agent",
+      "builtin": true
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+name: selfcheck
+
+# Public-facing checks: unit tests, sanitized-export build, sensitive scan.
+# The exporter's scan skips .git, __pycache__, .github (this workflow), logs,
+# config and the exporter itself, so the workflow never matches its own rules.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  selfcheck:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Sanitized export + sensitive-pattern self-check
+        shell: bash
+        run: python scripts/export_public.py --out "$RUNNER_TEMP/public-export"
+
+      - name: Single-file bundle smoke test
+        shell: bash
+        run: python scripts/package.py

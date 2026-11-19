@@ -1,0 +1,17 @@
+{
+  "routes": {
+    "github": {
+      "mode": "direct",
+      "proxy_url": "http://127.0.0.1:11455"
+    },
+    "gitee": {
+      "mode": "direct",
+      "locked": true,
+      "description": "境内直连通道 (强制锁定)"
+    },
+    "gitlab": {
+      "mode": "proxy",
+      "proxy_url": "http://127.0.0.1:11455"
+    }
+  }
+}

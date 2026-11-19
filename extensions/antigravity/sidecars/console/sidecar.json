@@ -1,0 +1,20 @@
+{
+  "command": "python",
+  "args": [
+    "main.py"
+  ],
+  "restart_policy": "always",
+  "display_name": "Git-Vault Console",
+  "description": "Enterprise Git-Vault Web Console for repository management, panic lockdown, and Star disaster recovery.",
+  "has_web_ui": true,
+  "ui_config": {
+    "display_name": "Git-Vault Console",
+    "views": [
+      {
+        "path": "/",
+        "entrypoint": "SIDECAR_UI_ENTRYPOINT_AUX_PANE",
+        "title": "Git-Vault Console"
+      }
+    ]
+  }
+}

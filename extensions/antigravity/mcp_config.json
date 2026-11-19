@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "git-vault": {
+      "command": "python",
+      "args": [
+        "<vault-root>\\tools\\git-vault\\core\\mcp_server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    }
+  }
+}

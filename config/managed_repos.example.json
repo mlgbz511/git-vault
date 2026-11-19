@@ -1,0 +1,11 @@
+{
+  "managed_repos": [
+    {
+      "path": "%USERPROFILE%/git-vault/demo-repo",
+      "name": "demo-repo",
+      "is_my_repo": true,
+      "owner": "<owner>",
+      "added_by": "auto"
+    }
+  ]
+}
